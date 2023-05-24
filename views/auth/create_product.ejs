@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/auth/add-product.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img
+          src="https://img-cdn.2game.vn/pictures/xemgame/2019/09/18/Lien-Minh-Huyen-Thoai-ky-niem-10-nam-1.jpg"
+          alt=""
+        />
+        <div class="information">
+          <div class="header-text">Leaguae of Legned</div>
+          <div class="header-text2">Enjoin Game right now !</div>
+        </div>
+      </div>
+      <nav class="navabar">
+        <a href="/">Shop</a>
+        <a href="/login">Login</a>
+        <a href="#">Shop</a>
+        <a href="#">Thống Kê Sản Phẩm</a>
+        <a href="/add-product">Tạo sản phẩm</a>
+        <a href="#">Order</a>
+      </nav>
+
+      <form action="#" class="search-bar">
+        <div class="bar search-icon">
+          <input type="text" placeholder="Tìm Kiếm" />
+          <button><ion-icon name="search"></ion-icon></button>
+        </div>
+      </form>
+    </header>
+
+    <div class="background"></div>
+
+    <div class="create-product">
+          <div class="left">
+            <h1>Chào mừng bạn đến với chức năng Admin</h1>
+            <h1>Tạo sản phẩm</h1>
+            
+            <div class="left-background"></div>
+          </div>
+      
+          <div class="right">
+            <form class="form-addProduct" action="/admin/postAddProduct" method="POST">
+                    <div class="form-control" >
+                      <!-- <label for="imageUrl">Image URL</label> -->
+                      <input type="text" name="img" id="img" value="<%= product.img %>" placeholder = "Nhập link ảnh vào đây">
+                    </div>
+
+                    <div class="form-control abc">
+                      <!-- <label for="description">Description</label> -->
+                      <textarea class="asd" name="description" id="description" rows="5" placeholder="Mô tả chi tiết"  ><%= product.description %></textarea>
+                  </div>
+
+                  <div class="form-control">
+                    <!-- <label for="title">Name of creator</label> -->
+                    <input type="text" name="title" id="title" value="<%= product.title %>" placeholder="Nhập title(tên thẻ game)">
+                  </div>
+
+                    <div class="form-control">
+                      <!-- <label for="title">Name of creator</label> -->
+                      <input type="text" name="img_creator" id="img_creator" value="<%= product.img_creator %>" placeholder="Nhập link ảnh của người tạo">
+                    </div>
+                    
+                    <div class="form-control">
+                      <!-- <label for="title">Name of creator</label> -->
+                      <input type="text" name="name_creator" id="name_creator" value="<%= product.name_creator %>" placeholder="Nhập tên của người tạo">
+                    </div>
+
+                    <div class="form-control">
+                      <!-- <label for="price">Price</label> -->
+                      <input type="number" name="price" id="price" step="0.01" value="<%= product.price %>" placeholder="Nhập giá bán">
+                    </div>
+
+                    <button class="form-control btn" type="submit">SubMit</button>
+
+            </form>
+        </div>
+  </body>
+</html>
