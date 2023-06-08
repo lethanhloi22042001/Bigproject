@@ -1,9 +1,8 @@
-const product = require("../models/product");
 const Product = require("../models/product");
 
  
 exports.getAddProduct = (req, res, next) => {
-  res.render("auth/create_product", {
+  res.render("admin/create_product", {
     product: '', 
   });
 };
@@ -25,7 +24,7 @@ exports.postAddProduct = (req, res, next) => {
     price: price,
     img: img,
     description: description,
-    //   userId: req.user,
+    userId: req.user,
   });
   product
     .save()

@@ -36,8 +36,8 @@
         </div>
       </div>
       <nav class="navabar">
-        <a href="/login">Đăng Nhập</a>
         <a href="/">Shop</a>
+        <a href="/login">Đăng Nhập</a>
         <a href="/detail">Chi Tiết Sản Phẩm</a>
         <a href="/cart">Giỏ Hàng</a>
         <a href="/admin/add-product">Thêm Sản Phẩm</a>
@@ -84,7 +84,10 @@
             <ion-icon name="wifi"></ion-icon>
             <div class="card_text">Chi tiết</div>
           </div>
-          <a href="" class="card-textright">Thêm vào giỏ hàng</a>
+          <form action="/cart" method="post">
+            <button class="btn" type="submit">Thêm vào giỏ hàng</button>
+            <input type="hidden" name="productId" value="<%= product._id %>">
+          </form>
           <a href="" class="card-textright"><%= product.price %> VNĐ</a>
         </div>
       </div>

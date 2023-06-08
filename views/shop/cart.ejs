@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="/css/shop/shop.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img
+          src="https://img-cdn.2game.vn/pictures/xemgame/2019/09/18/Lien-Minh-Huyen-Thoai-ky-niem-10-nam-1.jpg"
+          alt=""
+        />
+        <div class="information">
+          <div class="header-text">Leaguae of Legned</div>
+          <div class="header-text2">Enjoin Game right now !</div>
+        </div>
+      </div>
+      <nav class="navabar">
+        <a href="/">Shop</a>
+        <a href="/login">Đăng Nhập</a>
+        <a href="/detail">Chi Tiết Sản Phẩm</a>
+        <a href="/cart">Giỏ Hàng</a>
+        <a href="/admin/add-product">Thêm Sản Phẩm</a>
+        <!-- <a href="/order">Order</a> -->
+      </nav>
+
+      <form action="#" class="search-bar">
+        <div class="bar search-icon">
+          <input type="text" placeholder="Tìm Kiếm sản phẩm" />
+          <button><ion-icon name="search"></ion-icon></button>
+        </div>
+      </form>
+    </header>
+
+    <div class="backround"></div>
+    <% if(prods.length > 0) { %>
+    <div class="cards">
+        <% for (let product of prods) { %>
+      <div class="card">
+        <img
+          src="<%= product.img%>"
+          alt=""
+        />
+        <div class="card-content">
+          <div class="text" >
+                <%= product.description %>
+          </div>
+          <div class="card-content-user">
+            <img
+              src="<%= product.img_creator %>"
+              alt=""
+            />
+            <div class="card-content-user-top">
+              <div class="top-top">
+                <div class="name"> <%= product.title %> </div>
+                <ion-icon name="checkmark-circle"></ion-icon>
+              </div>
+              <div class="top-text"><%= product.name_creator%></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="live">
+            <ion-icon name="wifi"></ion-icon>
+            <div class="card_text">Chi tiết</div>
+          </div>
+          <a href="" class="card-textright">Thêm vào giỏ hàng</a>
+          <a href="" class="card-textright"><%= product.price %> VNĐ</a>
+        </div>
+      </div>
+      <% }%>
+    </div>
+    <%  } else {  %>
+        <h1> Chưa có sản phẩm nào !</h1>
+    <% } %>
+  </body>
+</html>
